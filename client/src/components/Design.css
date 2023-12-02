@@ -1,0 +1,509 @@
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  margin: 0; /* Ensure no default margin */
+  padding: 0; /* Ensure no default padding */
+  height: 100%;
+}
+.page-container {
+  flex: 1; /* Flex-grow to take all available space */
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Ensure the root element also takes full height */
+}
+
+.content-wrap {
+  flex: 1; /* Flex grow to take available space */
+  /* Other styles as needed */
+}
+
+.navbar {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center; /* Adjusted to center the links */
+  align-items: center; /* Align items vertically */
+  padding: 10px;
+}
+
+.navbar-logo {
+  width: 250px;
+  height: 120px;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  align-items: center; /* Align links vertically */
+  flex-grow: 0; /* Allows the links to take available space */
+}
+
+.navbar-links a {
+  color: white;
+  font-size: 22px;
+  padding: 20px;
+  text-decoration: none;
+  margin: 0 10px; /* Adds horizontal spacing between links */
+}
+
+.slogan-section {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.slogan-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 820px; /* Set the height to full viewport */
+  margin: 0;
+  background-color: black;
+  padding: 0%;
+}
+
+.background-image {
+  width: 50%; /* Cover left half of the viewport */
+  height: fill;
+  object-fit: cover; /* Ensures image covers the area */
+}
+
+.slogan-text {
+  color: white;
+  font-size: 70px;
+  font-weight: bold; /* Make text bold */
+  text-align: left;
+  width: auto; /* Cover right half of the viewport */
+  padding-left: 20px; /* Add some padding for the text */
+}
+
+.collection-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px; /* Increased bottom margin for space before the book collection */
+  color: black;
+  font-size: 70px;
+}
+
+.book-collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+  justify-content: center; /* Center the entire grid */
+  gap: 30px; /* Adjusted gap between items */
+  padding: 0 15%; /* Added horizontal padding for more space on the sides */
+  margin-bottom: 50px; /* Space before the footer */
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content */
+  margin-bottom: 10px;
+  color: black;
+}
+
+.book-item fieldset {
+  border: 2px solid #ccc; /* Style the border */
+  padding: 15px; /* Padding inside the fieldset */
+  margin: 0;
+  width: fit-content; /* Width to fit the content */
+  text-align: left; /* Aligning the legend text to the left */
+  position: relative;
+}
+
+.book-item img {
+  height: 450px; /* Adjust the size as needed */
+  width: 300px;
+  object-fit: cover; /* Ensures image covers the area */
+  box-shadow: 5px 5px 5px; /* Shadow effect */
+  margin: 10px 20px; /* Center the image within the fieldset */
+}
+
+.book-item h4 {
+  text-align: center; /* Center the title text */
+  margin-top: 10px; /* Margin above the title */
+  font-size: 20px;
+}
+
+.book-image {
+  height: 40px;
+  width: 300px;
+  object-fit: cover;
+  box-shadow: 3px 3px 3px;
+  margin: 10px 20px;
+  /* Other styles for book images */
+}
+
+.book-item legend {
+  position: absolute; /* Absolute position relative to its fieldset */
+  top: -10px; /* Adjust this value to move legend up */
+  left: 10px; /* Adjust horizontal positioning */
+  background: white; /* Background to cover the line */
+  padding: 0 5px; /* Add some padding around the text and image */
+  /* Other legend styles... */
+}
+
+.book-item legend img {
+  height: 50px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  vertical-align: baseline; /* Align image with the text */
+}
+
+.book-info {
+  text-align: center; /* Center the book title and author */
+  margin-bottom: 10px; /* Space between the text and the image */
+}
+
+.book-info h4 {
+  margin: 0; /* Adjust as needed */
+  /* Additional styling for the book title */
+}
+
+.book-info p {
+  margin: 0; /* Adjust as needed */
+  /* Additional styling for the author */
+}
+
+.footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content vertically */
+}
+
+.footer img.footer-image {
+  width: 100px; /* Adjust the size as needed */
+  height:100px;
+  margin-bottom: 10px;
+}
+
+.footer .about-us-link {
+  color: white;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.auth-form {
+  max-width: 400px; /* Adjust as needed */
+  margin: 50px auto; /* Center the form with margin */
+  padding: 20px;
+  border: 2px solid #000000; /* Style the border */
+  background-color: #ffffff; /* Light background for the form */
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between form elements */
+}
+
+.auth-form label {
+  font-weight: bold;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.auth-form button {
+  padding: 10px;
+  background-color: #000000; /* Example: blue background */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #ffffff; /* Darker shade on hover */
+  color: #000;
+  box-shadow: 2px 2px 2px;
+}
+.signup-link {
+  text-align: center;
+  margin-top: 20px; /* Keeps space above the link */
+  padding-top: 10px; /* Adds space directly above the Sign Up link */
+  border-top: 1px solid #ccc; /* Optional: adds a line above the link for separation */
+}
+
+.signup-link a {
+  color: #000000; /* Example link color */
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.signin-link a {
+  color: #000000; /* Example link color */
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+.about-us-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.about-us-title {
+  margin-bottom: 40px;
+  color: #000000;
+  font-size: 36px;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-member {
+  width: 200px;
+  text-align: center;
+}
+
+.team-member-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Circular photos */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional shadow for effect */
+}
+
+.team-member-name {
+  color: #000000;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.team-member-description {
+  color: #000000;
+  font-size: 14px;
+}
+
+.navbar-links a,
+.navbar-links .navbar-link {
+  color: white;
+  font-size: 22px;
+  padding: 20px;
+  text-decoration: none;
+  margin: 0 10px; /* Adds horizontal spacing between links */
+  cursor: pointer;
+}
+
+.navbar-links a.active-link, /* Style for active NavLink */
+.navbar-links .navbar-link.active-link { /* Style for active div link */
+  font-weight: bold;
+}
+
+.form-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.form-button:hover {
+  background-color: #ffffff; /* Darker shade on hover */
+  color: #000;
+  box-shadow: 2px 2px 2px;
+}
+
+.delete-button {
+  background-color: #000000; /* Red color for delete button */
+  margin-top: 5px; /* Additional space between update and delete buttons */
+}
+
+.delete-button:hover {
+  background-color: #ffffff; /* Darker shade on hover */
+  color: #000;
+  box-shadow: 2px 2px 2px;
+}
+
+.form-divider {
+border: none;
+height: 1px;
+background-color: #ddd; /* Light grey color */
+margin: 10px 10px; /* Spacing above and below the line */
+}
+
+.welcome-message {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 2em; /* Adjust font size to your liking */
+  color: #000000; /* A neutral, readable color */
+  font-weight: bold;
+}
+
+/* If your website has a primary color, consider using it for a small underline */
+.welcome-message::after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 60px; /* Underline width */
+  background-color: #000000; /* Replace with your primary color */
+  margin-top: 40px;
+}
+
+.logout-button {
+  padding: 10px;
+  background-color: #000000; /* Example: blue background */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 21px;
+}
+
+.logout-button:hover {
+  background-color: #ffffff; /* Darker shade on hover */
+  color: #000;
+
+}
+
+.about-us-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-us-title {
+  margin-bottom: 40px;
+  /* Other styles as needed */
+}
+
+.about-us-description {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  line-height: 1.5;
+  color: #000000;
+  font-size: 20px;
+  padding: 0px;
+}
+
+.about-us-content {
+  padding-left: 450px; /* Increase left margin */
+  padding-right: 450px; /* Increase right margin */
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between team members */
+  margin-bottom: 30px; /* Space below the team section */
+}
+
+.team-member {
+  flex: 0 0 calc(33.333% - 20px); /* Each member takes up a third of the container width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-member-photo {
+  width: 250px; /* Adjust size as needed */
+  height: 350px;
+  border-radius: 0%;
+  margin-bottom: 10px;
+  border-color: #000;
+
+  box-shadow: 5px 5px 5px rgb(0, 0, 0); /* Shadow for depth */
+}
+
+.team-member-name {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-member {
+    flex: 0 0 calc(50% - 20px); /* Two members per row on smaller screens */
+  }
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 600px;
+  margin-left: 600px;
+}
+
+.item-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.item-price {
+  font-size: 18px;
+  color: #000000;
+}
+
+.item-details {
+  text-align: center;
+}
+
+.item-details button {
+  width: auto;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.item-details button:hover {
+  background-color: #ffffff; /* Darker shade on hover */
+  color: #000;
+  box-shadow: 2px 2px 2px;
+}
+
+.total-cart-price {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.total-cart-price h3 {
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
