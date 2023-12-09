@@ -16,7 +16,8 @@
     "validator": "^13.11.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "client": "cd client && npm start"
   },
   "name": "week2",
   "version": "1.0.0",
