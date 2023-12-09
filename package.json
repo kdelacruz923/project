@@ -17,7 +17,9 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "client": "cd client && npm start"
+    "client-install": "cd client && npm install",
+    "client": "cd client && npm start",
+    "heroku-postbuild": "npm run client-install && cd client && npm run build"
   },
   "name": "week2",
   "version": "1.0.0",
