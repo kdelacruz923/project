@@ -31,9 +31,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to BookStore application." });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Welcome to BookStore application." });
+// });
+
+//added for deployment
+const path = require("path");
+
+if (process.env.NODE_ENV === "production") {
+
+    app.use(express.static("client/build"));
+
+    app.get("*", (req, res) => {
+
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+
+   });
+
+}
 
 // Import the auth routes
 const authRoutes = require('./app/routes/auth.routes'); // Adjust the path as necessary
