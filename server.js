@@ -35,9 +35,12 @@ app.use(express.urlencoded({ extended: true }));
 //   res.json({ message: "Welcome to BookStore application." });
 // });
 
+
+// Import the auth routes
+const authRoutes = require('./app/routes/auth.routes'); // Adjust the path as necessary
+
 // Use Auth Routes
 app.use('/api', authRoutes);
-
 
 //added for deployment
 const path = require("path");
@@ -53,9 +56,6 @@ if (process.env.NODE_ENV === "production") {
    });
 
 }
-
-// Import the auth routes
-const authRoutes = require('./app/routes/auth.routes'); // Adjust the path as necessary
 
 
 
